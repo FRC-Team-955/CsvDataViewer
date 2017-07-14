@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<style>
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #ddd;
+}
+
+#myBar {
+  position: absolute;
+  width: 1%;
+  height: 100%;
+  background-color: #FF0000;
+}
+
+</style>
+
+
+<title>Data Log Viewer</title>
+
+<head>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  
+	<script src="highcharts/jquery-1.11.0.min.js"></script>
+	<script src="highcharts/highcharts.js"></script>
+	<script src="highcharts/boost.js"></script>
+	<script src="highcharts/exporting.js"></script>
+	<script src="highcharts/dataViewer.js"></script>
+	
+	<script>if (window.module) module = window.module;</script>
+
+</head>
+
+<body>
+
+<div class="container">
+	<header>
+		<h2>Data Log Viewer</h2>
+	</header>
+
+	<aside>
+		
+		<div>
+			Choose file: <input type="file" id="files" value="../logFileSnagger/downloaded_logs" onchange="handleFileSelect(this.files)" accept=".csv" autofocus="autofocus" />
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-default" onclick="hideAll()">Clear All</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(0)">Input Power</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(1)">All Currents</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(2)">Shooter Control</button>
+            <button type="button" class="btn btn-default" onclick="setPreset(3)">Robot Motion</button>
+            <button type="button" class="btn btn-default" onclick="setPreset(4)">Shot Control</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(5)">Pneumatics</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(6)">RIO Performance</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(7)">CoProc Performance</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(8)">Vision Target</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(9)">Vision Align Action</button>
+            <button type="button" class="btn btn-default" onclick="setPreset(10)">Vision Align Angle</button>
+            <button type="button" class="btn btn-default" onclick="setPreset(11)">Vision Align Dist</button>
+			<button type="button" class="btn btn-default" onclick="setPreset(12)">Drivetrain ClosedLoop</button>
+		</div>
+	</aside>
+
+	<article>
+		<div id="container" style="width:100%; height:900px"></div>
+	</article>
+
+	<footer class="footer">FRC 955 CV Robotics</footer>
+
+</div>
+
+</body>
+
+</html>

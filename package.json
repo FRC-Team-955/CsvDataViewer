@@ -1,0 +1,41 @@
+{
+  "name": "csv-data-viewer",
+  "productName": "CSV Data Viewer",
+  "description": "Electron data viewer for csv log files",
+  "version": "0.0.0",
+  "author": "Trevor Jones <trevor.eric.j@gmail.com>",
+  "homepage": "https://github.com/FRC-Team-955",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.frc955.csv-data-viewer",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "publish": null
+  },
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "build": "gulp build",
+    "prerelease": "gulp build --env=production",
+    "release": "build",
+    "start": "gulp start"
+  },
+  "dependencies": {
+    "fs-jetpack": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-builder": "^19.5.1",
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-less": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "minimist": "^1.2.0",
+    "rollup": "^0.43.0",
+    "source-map-support": "^0.4.11"
+  }
+}
