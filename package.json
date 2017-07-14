@@ -2,7 +2,7 @@
   "name": "csv-data-viewer",
   "productName": "CSV Data Viewer",
   "description": "Electron data viewer for csv log files",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Trevor Jones <trevor.eric.j@gmail.com>",
   "homepage": "https://github.com/FRC-Team-955",
   "main": "app/background.js",
